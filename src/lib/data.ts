@@ -14,10 +14,10 @@ export const stats = [
 ] as const;
 
 export const growthStory = [
-  { year: "2016", label: "Frontend Engineer" },
-  { year: "2019", label: "Full Stack" },
-  { year: "2021", label: "Architecture Lead" },
-  { year: "", label: "Enterprise Platforms" },
+  { year: "2016", label: "Frontend Engineer", active: false },
+  { year: "2019", label: "Full Stack", active: false },
+  { year: "2021", label: "Architecture Lead", active: false },
+  { year: "", label: "Enterprise Platforms", active: false },
   { year: "2024", label: "Independent SaaS in production", active: true },
 ] as const;
 
