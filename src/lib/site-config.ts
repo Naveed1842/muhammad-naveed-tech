@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Muhammad Naveed — Software Architect & Full Stack Engineer",
   description:
     "Ten years of designing, building, and operating secure, scalable platforms for government, energy, and healthcare — and shipping my own production SaaS.",
-  url: "https://muhammadnaveed.dev",
+  url: "https://mnaveed.tech",
   role: "Software Architect · Full Stack Engineer",
   location: "Riyadh, Saudi Arabia",
   locationNote: "Transferable Iqama",
@@ -13,7 +13,7 @@ export const siteConfig = {
   phoneHref: "+966566272169",
   linkedin: "https://www.linkedin.com/in/muhammad-naveed-software-engineer",
   linkedinLabel: "linkedin.com/in/muhammad-naveed-software-engineer",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/resume/Muhammad-Naveed-Master-Resume.pdf",
 } as const;
 
 export const navLinks = [
