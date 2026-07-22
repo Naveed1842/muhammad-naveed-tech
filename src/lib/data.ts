@@ -10,15 +10,15 @@ export const stats = [
   { value: "10+", label: "Years experience" },
   { value: "1", label: "SaaS in production" },
   { value: "4", label: "Industry sectors" },
-  { value: "~30%", label: "Faster deploys, led" },
+  { value: "~30%", label: "Faster deployments" },
 ] as const;
 
 export const growthStory = [
-  { year: "2016", label: "Frontend Engineer", active: false },
-  { year: "2019", label: "Full Stack", active: false },
-  { year: "2021", label: "Architecture Lead", active: false },
-  { year: "", label: "Enterprise Platforms", active: false },
-  { year: "2024", label: "Independent SaaS in production", active: true },
+  { year: "2016", label: "Software Engineer", active: false },
+  { year: "2019", label: "Full-Stack Engineer", active: false },
+  { year: "2021", label: "Frontend Architecture Lead", active: false },
+  { year: "2024", label: "System Designer / Solution Architect", active: false },
+  { year: "", label: "Technical Leader — concept to production", active: true },
 ] as const;
 
 export const flagship = {
@@ -65,6 +65,9 @@ export const flagship = {
     "Heroku",
     "Firebase",
   ],
+  caseStudyLabel: "Read the AWS deployment case study",
+  caseStudyNote: "Architecture · challenges · debugging stories · roadmap",
+  caseStudyHref: "/case-studies/jjt",
 } as const;
 
 export const caseStudies = [
@@ -75,7 +78,8 @@ export const caseStudies = [
     problem: "sponsorship money moving with no audit trail.",
     solution:
       "an append-only ledger enforced at the database level, claims-scoped access, and full reconciliation — built solo, live in production.",
-    status: "COMING SOON",
+    status: "LIVE",
+    href: "/case-studies/jjt",
   },
   {
     tag: "GOVERNMENT",
@@ -152,18 +156,33 @@ export const aiWorkflow = [
 
 export const experience = [
   {
+    company: "JJT Sponsorship Platform",
+    location: "Independent · sponsorone.app",
+    role: "System Designer / Solution Architect",
+    period: "2024 — Present",
+    theme: "SYSTEM DESIGN · END-TO-END OWNERSHIP",
+    bullets: [
+      "Designed the complete system architecture from business requirements through implementation planning — then built and shipped it to production as the sole engineer.",
+      "Worked directly with stakeholders to translate real business processes — sponsorships, payments, financial reporting — into a scalable technical solution.",
+      "Designed the domain model, database architecture, system workflows, user roles and permissions, immutable audit trail, and financial tracking before a line of code was written.",
+      "Produced the BRD, architecture diagrams, technical documentation, and implementation guidelines that governed the entire build.",
+      "Defined a modular, reusable architecture — Java Spring Boot, Angular, PostgreSQL — built for maintainability and long-term evolution.",
+      "Planned and executed the AWS production deployment: Docker containerization, ECS/Fargate, and the CI/CD strategy.",
+    ],
+  },
+  {
     company: "Elm Company",
     location: "Riyadh, Saudi Arabia",
-    role: "Senior Software Developer · Front-End Architecture Lead",
+    role: "Senior Software Engineer · Front-End Architecture Lead",
     period: "Oct 2021 — Present",
-    theme: "OWNERSHIP · ARCHITECTURE",
+    theme: "TECHNICAL LEADERSHIP",
     bullets: [
-      "Own the frontend architecture for the TAMM government platform — the shared component library, design system, and coding standards that every Angular and React product team builds on.",
-      "Build and maintain the backend APIs (Java Spring Boot, Node.js/NestJS) that connect government systems to citizen-facing apps at national scale, with PostgreSQL and MongoDB per service.",
-      "Designed platform-wide authentication: JWT/OAuth2, role-based access control, and API key management for third-party integrations — plus WebSocket infrastructure for real-time notifications.",
-      "Rebuilt CI/CD pipelines across product teams (GitHub Actions, GitLab CI), cutting deployment time ~30%; profiling and bundle work delivered 20–25% performance gains across several products.",
-      "Run containerised deployments on AWS, Kubernetes, and OpenShift with Datadog observability designed to catch problems before users see them.",
-      "Mentor engineers, run code reviews, and write ADRs and system diagrams so the architecture outlives any one person — including me.",
+      "Lead frontend architecture for TAMM, a national-scale government platform — owning the shared component library, design system, and engineering standards every Angular and React product team builds on.",
+      "Build and maintain the backend services (Java Spring Boot, Node.js/NestJS, PostgreSQL, MongoDB) that connect government systems to citizen-facing applications.",
+      "Designed platform-wide security: JWT/OAuth2 authentication, role-based access control, and API key management for third-party integrations — plus WebSocket infrastructure for real-time notifications.",
+      "Cut deployment time ~30% by rebuilding CI/CD pipelines (GitHub Actions, GitLab CI) across product teams; delivered 20–25% performance gains through profiling and optimization.",
+      "Operate production workloads on AWS, Kubernetes, and OpenShift with Datadog observability that catches problems before users do.",
+      "Mentor engineers, lead code reviews, and document architecture decisions so quality scales with the team — and the architecture outlives any one person.",
     ],
   },
   {

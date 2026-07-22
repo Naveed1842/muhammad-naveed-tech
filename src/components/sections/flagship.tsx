@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { Reveal } from "@/components/reveal";
 import { flagship } from "@/lib/data";
@@ -115,6 +117,19 @@ export function Flagship() {
                   {tech}
                 </span>
               ))}
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center gap-3.5">
+              <Link
+                href={flagship.caseStudyHref}
+                className="inline-flex items-center gap-2.5 rounded-[9px] bg-primary px-5 py-3 text-[14.5px] font-medium text-white no-underline transition-opacity hover:opacity-90"
+              >
+                {flagship.caseStudyLabel}
+                <ArrowRight className="size-[15px]" />
+              </Link>
+              <span className="font-mono text-[11.5px] text-[var(--band-muted)]">
+                {flagship.caseStudyNote}
+              </span>
             </div>
           </div>
         </Reveal>

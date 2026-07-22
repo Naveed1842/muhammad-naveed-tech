@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site-config";
@@ -9,12 +10,15 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
   const [open, setOpen] = React.useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+  const homePrefix = isHome ? "" : "/";
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-[92vw] max-w-[1120px] items-center justify-between gap-4">
         <Link
-          href="#top"
+          href={isHome ? "#top" : "/"}
           className="flex items-center gap-2.5 text-foreground no-underline"
           onClick={() => setOpen(false)}
         >
@@ -27,7 +31,11 @@ export function Navbar() {
         <div className="hidden items-center gap-7 nav:flex">
           <div className="flex items-center gap-5.5 text-sm text-body">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="text-inherit no-underline hover:text-foreground">
+              <a
+                key={link.href}
+                href={`${homePrefix}${link.href}`}
+                className="text-inherit no-underline hover:text-foreground"
+              >
                 {link.label}
               </a>
             ))}
@@ -70,7 +78,7 @@ export function Navbar() {
               {navLinks.map((link) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={`${homePrefix}${link.href}`}
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-2 py-3 text-base font-medium text-foreground no-underline"
                 >

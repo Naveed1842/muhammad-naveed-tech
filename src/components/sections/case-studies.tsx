@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { caseStudies } from "@/lib/data";
@@ -33,8 +34,21 @@ export function CaseStudies() {
                 <strong>Problem:</strong> {cs.problem} <strong>Solution:</strong> {cs.solution}
               </p>
               <div className="flex items-center justify-between border-t border-border pt-[18px]">
-                <span className="text-sm font-semibold text-primary">Read case study →</span>
-                <span className="rounded-full border border-border px-2 py-[3px] font-mono text-[10.5px] text-muted-foreground">
+                {"href" in cs && cs.href ? (
+                  <Link href={cs.href} className="text-sm font-semibold text-primary no-underline">
+                    Read case study →
+                  </Link>
+                ) : (
+                  <span className="text-sm font-semibold text-primary">Read case study →</span>
+                )}
+                <span
+                  className={`inline-flex items-center gap-1.5 rounded-full border px-2 py-[3px] font-mono text-[10.5px] ${
+                    cs.status === "LIVE"
+                      ? "border-success/30 text-success"
+                      : "border-border text-muted-foreground"
+                  }`}
+                >
+                  {cs.status === "LIVE" && <span className="size-[5px] rounded-full bg-success" />}
                   {cs.status}
                 </span>
               </div>
