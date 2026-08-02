@@ -13,7 +13,7 @@ export function Footer() {
           <span className="text-sm text-[var(--band-foreground)]">{siteConfig.name}</span>
         </div>
         <div className="font-mono text-[12.5px]">
-          © {year} · Software Architect &amp; Full Stack Engineer · Riyadh
+          © {year} · Software Architect &amp; Senior Full-Stack Engineer · Riyadh
         </div>
       </div>
     </footer>

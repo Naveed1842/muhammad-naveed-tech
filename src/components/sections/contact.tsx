@@ -21,17 +21,19 @@ export function Contact() {
   return (
     <section id="contact" className="mx-auto w-[92vw] max-w-[1120px] py-[clamp(80px,10vw,130px)] text-center">
       <Reveal>
-        <SectionEyebrow className="justify-center">10 / CONTACT</SectionEyebrow>
+        <SectionEyebrow className="justify-center">09 / CONTACT</SectionEyebrow>
       </Reveal>
       <Reveal delay={0.05}>
         <h2 className="mx-auto m-0 mb-5 max-w-[15em] text-[clamp(32px,5vw,56px)] leading-[1.05] font-bold tracking-[-0.03em]">
-          Have a product that needs an owner?
+          What I&apos;m looking for
         </h2>
       </Reveal>
       <Reveal delay={0.1}>
         <p className="mx-auto m-0 mb-10 max-w-[34em] text-[clamp(16px,1.9vw,18px)] text-muted-foreground">
-          Open to senior engineering and architecture roles. The fastest way to reach me is email —
-          I&apos;ll get back to you quickly.
+          Senior engineering or architecture roles where I own a system rather than a backlog.
+          Riyadh-based, {siteConfig.relocation.toLowerCase()}. I&apos;m currently on a transferable
+          Iqama, so I can move without a release complication. Email is fastest — I&apos;ll get back
+          to you quickly.
         </p>
       </Reveal>
 

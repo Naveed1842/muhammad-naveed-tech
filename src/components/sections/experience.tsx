@@ -7,7 +7,7 @@ export function Experience() {
     <section id="experience" className="border-y border-border bg-muted">
       <div className="mx-auto w-[92vw] max-w-[1120px] py-[clamp(72px,9vw,120px)]">
         <Reveal>
-          <SectionEyebrow>06 / EXPERIENCE</SectionEyebrow>
+          <SectionEyebrow>05 / EXPERIENCE</SectionEyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="m-0 mb-14 text-[clamp(28px,3.6vw,40px)] leading-[1.1] font-semibold tracking-[-0.025em]">

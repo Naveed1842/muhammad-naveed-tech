@@ -1,14 +1,15 @@
 export const siteConfig = {
   name: "Muhammad Naveed",
   initials: "MN",
-  title: "Muhammad Naveed — Software Architect & Full Stack Engineer",
+  title: "Muhammad Naveed — Software Architect & Senior Full-Stack Engineer",
   description:
-    "Ten years of designing, building, and operating secure, scalable platforms for government, energy, and healthcare — and shipping my own production SaaS.",
+    "I lead frontend architecture for TAMM, a national government services platform, and independently run a production SaaS. Ten years across government, oilfield, healthcare, and payments.",
   url: "https://mnaveed.tech",
-  role: "Software Architect · Full Stack Engineer",
+  role: "Software Architect · Senior Full-Stack Engineer",
   location: "Riyadh, Saudi Arabia",
   locationNote: "Transferable Iqama",
-  email: "mnk4034@gmail.com",
+  relocation: "Open to relocation",
+  email: "naveed4034@gmail.com",
   phone: "+966 56 627 2169",
   phoneHref: "+966566272169",
   linkedin: "https://www.linkedin.com/in/muhammad-naveed-software-engineer",
@@ -18,9 +19,8 @@ export const siteConfig = {
 
 export const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#flagship", label: "Flagship" },
-  { href: "#cases", label: "Case Studies" },
-  { href: "#principles", label: "Principles" },
+  { href: "#tamm", label: "TAMM" },
+  { href: "#sponsorone", label: "SponsorOne" },
   { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ] as const;

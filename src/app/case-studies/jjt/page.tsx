@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { Reveal, RevealGroup, RevealItem } from "@/components/reveal";
 import { jjtCaseStudy } from "@/lib/case-study-jjt";
-import { flagship } from "@/lib/data";
+import { sponsorOne } from "@/lib/data";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function JjtCaseStudyPage() {
           <div className="bg-grid pointer-events-none absolute inset-0" />
           <div className="relative mx-auto w-[92vw] max-w-[1120px] py-[clamp(56px,8vw,96px)]">
             <Link
-              href="/#cases"
+              href="/#sponsorone"
               className="mb-8 inline-flex items-center gap-2 font-mono text-[12.5px] text-[var(--band-muted)] no-underline hover:text-[var(--band-foreground)]"
             >
               <ArrowLeft className="size-3.5" />
@@ -37,9 +37,8 @@ export default function JjtCaseStudyPage() {
             </Link>
 
             <div className="mb-5 flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex items-center gap-1.5 rounded-[5px] border border-[#2a4438] px-2.5 py-[5px] font-mono text-[11px] tracking-wide text-success">
-                <span className="animate-pulse-dot size-1.5 rounded-full bg-success" />
-                LIVE IN PRODUCTION
+              <span className="inline-flex items-center gap-1.5 rounded-[5px] border border-border px-2.5 py-[5px] font-mono text-[11px] tracking-wide text-[var(--band-muted)]">
+                {sponsorOne.status}
               </span>
               <span className="font-mono text-[11px] text-[var(--band-muted)]">{jjtCaseStudy.period}</span>
             </div>
@@ -48,7 +47,7 @@ export default function JjtCaseStudyPage() {
               {jjtCaseStudy.title}
             </h1>
             <p className="m-0 mb-6 max-w-[42em] text-[clamp(15px,1.7vw,18px)] leading-[1.65] text-[var(--band-body)]">
-              {flagship.description}
+              {sponsorOne.problem} {sponsorOne.solution}
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -137,27 +136,6 @@ export default function JjtCaseStudyPage() {
           </RevealGroup>
         </section>
 
-        {/* ============ METRICS ============ */}
-        <div className="border-y border-border bg-muted">
-          <div className="mx-auto grid w-[92vw] max-w-[1120px] grid-cols-2 nav:grid-cols-4">
-            {flagship.metrics.map((m, i) => (
-              <div
-                key={m.label}
-                className={`px-2 py-[26px] text-center ${i % 2 === 0 ? "border-r border-border" : ""} ${
-                  i < 2 ? "border-b border-border nav:border-b-0" : ""
-                } ${i === 2 ? "nav:border-r" : ""}`}
-              >
-                <div className="text-[clamp(26px,3vw,34px)] font-bold tracking-[-0.02em] text-foreground">
-                  {m.value}
-                </div>
-                <div className="mt-1 font-mono text-[11.5px] tracking-wide text-muted-foreground uppercase">
-                  {m.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* ============ CHALLENGES ============ */}
         <section className="mx-auto w-[92vw] max-w-[1120px] py-[clamp(64px,8vw,100px)]">
           <Reveal>
@@ -208,7 +186,7 @@ export default function JjtCaseStudyPage() {
             </Reveal>
             <Reveal delay={0.15}>
               <div className="flex flex-wrap gap-1.5">
-                {flagship.stack.map((tech) => (
+                {sponsorOne.stack.map((tech) => (
                   <span
                     key={tech}
                     className="rounded-[5px] border border-[var(--band-border)] bg-[var(--band-bg-raised)] px-2 py-1 font-mono text-[11.5px] text-[var(--band-body)]"
@@ -262,7 +240,7 @@ export default function JjtCaseStudyPage() {
                 {siteConfig.email}
               </a>
               <Link
-                href="/#cases"
+                href="/#sponsorone"
                 className="inline-flex items-center gap-2.5 rounded-[9px] border border-border bg-background px-6 py-3.5 text-[15px] font-medium text-foreground no-underline"
               >
                 <ArrowLeft className="size-4" />

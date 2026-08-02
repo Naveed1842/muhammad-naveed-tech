@@ -4,10 +4,10 @@ import { principles } from "@/lib/data";
 
 export function Principles() {
   return (
-    <section id="principles" className="border-y border-border bg-muted">
+    <section id="how-i-work" className="border-y border-border bg-muted">
       <div className="mx-auto w-[92vw] max-w-[1120px] py-[clamp(72px,9vw,110px)]">
         <Reveal>
-          <SectionEyebrow>04 / ENGINEERING PRINCIPLES</SectionEyebrow>
+          <SectionEyebrow>06 / HOW I WORK</SectionEyebrow>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="m-0 mb-12 max-w-[17em] text-[clamp(28px,3.6vw,40px)] leading-[1.1] font-semibold tracking-[-0.025em]">

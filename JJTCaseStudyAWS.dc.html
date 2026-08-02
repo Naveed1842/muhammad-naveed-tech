@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #0B0D10; }
+  ::selection { background: #2B57D4; color: #fff; }
+  a { color: #6E92E8; } a:hover { color: #9BB5F0; }
+  section { scroll-margin-top: 72px; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #6E92E8; outline-offset: 2px; border-radius: 4px; }
+  @keyframes pulseDot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+  @keyframes flowDash { to { stroke-dashoffset: -14; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+</helmet>
+
+<div style="font-family: 'Geist', system-ui, sans-serif; color: #F2F4F7; background: #0B0D10; -webkit-font-smoothing: antialiased; line-height: 1.6;">
+
+  <!-- NAV -->
+  <nav style="position: sticky; top: 0; z-index: 50; background: rgba(11,13,16,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid #1F242C;">
+    <div style="width: min(1120px, 92vw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px;">
+      <a href="Portfolio V3.dc.html" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #9AA1AD; font-size: 13.5px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Portfolio
+      </a>
+      <div style="display: flex; align-items: center; gap: 20px; font-family: 'Geist Mono', monospace; font-size: 12px; color: #9AA1AD; overflow-x: auto;">
+        <a href="#architecture" style="text-decoration: none; color: inherit;">Architecture</a>
+        <a href="#challenges" style="text-decoration: none; color: inherit;">Challenges</a>
+        <a href="#debugging" style="text-decoration: none; color: inherit;">Debugging</a>
+        <a href="#roadmap" style="text-decoration: none; color: inherit;">Roadmap</a>
+      </div>
+      <a href="mailto:naveed4034@gmail.com" style="display: inline-flex; align-items: center; gap: 8px; background: #2B57D4; color: #fff; text-decoration: none; font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 8px; transition: background .15s;" style-hover="background: #1E44B0;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position: relative; overflow: hidden; border-bottom: 1px solid #1F242C;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(1000px 400px at 20% -10%, rgba(43,87,212,0.22), transparent); pointer-events: none;"></div>
+    <div style="width: min(1120px, 92vw); margin: 0 auto; padding: clamp(48px, 7vw, 88px) 0; position: relative;">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 26px;">
+        <span style="display: inline-flex; align-items: center; gap: 7px; font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #36C57E; border: 1px solid #1E3A2C; background: rgba(54,197,126,0.06); padding: 5px 10px; border-radius: 100px;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #36C57E; animation: pulseDot 2.4s ease-in-out infinite;"></span>LIVE IN PRODUCTION</span>
+        <span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #9AA1AD; border: 1px solid #262C36; padding: 5px 10px; border-radius: 100px;">CASE STUDY 01</span>
+        <span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #9AA1AD; border: 1px solid #262C36; padding: 5px 10px; border-radius: 100px;">CLOUD · DEVOPS</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: clamp(28px, 4vw, 56px);">
+        <div style="flex: 2 1 420px;">
+          <div style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 18px;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; background: #2B57D4; border-radius: 13px; font-family: 'Geist Mono', monospace; font-weight: 600; font-size: 19px; color: #fff; flex: 0 0 auto;">JJT</span>
+            <div>
+              <h1 style="font-size: clamp(26px, 3.6vw, 42px); font-weight: 700; letter-spacing: -0.025em; margin: 0; line-height: 1.08;">Deploying JJT to AWS Production</h1>
+              <div style="font-size: 15px; color: #9AA1AD; margin-top: 8px;">From a single Heroku dyno to a fault-tolerant AWS architecture — planned, built, deployed, and debugged solo.</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 28px;">
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #B6BCC6; background: #14171C; border: 1px solid #262C36; padding: 4px 9px; border-radius: 6px;">Spring Boot</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #B6BCC6; background: #14171C; border: 1px solid #262C36; padding: 4px 9px; border-radius: 6px;">Docker</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #B6BCC6; background: #14171C; border: 1px solid #262C36; padding: 4px 9px; border-radius: 6px;">AWS ECS</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #B6BCC6; background: #14171C; border: 1px solid #262C36; padding: 4px 9px; border-radius: 6px;">PostgreSQL · RDS</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #B6BCC6; background: #14171C; border: 1px solid #262C36; padding: 4px 9px; border-radius: 6px;">CloudWatch</span>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #B6BCC6; background: #14171C; border: 1px solid #262C36; padding: 4px 9px; border-radius: 6px;">IAM</span>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <a href="https://sponsorone.app" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: #2B57D4; color: #fff; text-decoration: none; font-size: 14px; font-weight: 500; padding: 11px 18px; border-radius: 9px; transition: background .15s;" style-hover="background: #1E44B0;">Live Demo
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></a>
+            <a href="#architecture" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #F2F4F7; text-decoration: none; font-size: 14px; font-weight: 500; padding: 11px 18px; border-radius: 9px; border: 1px solid #2F353F; transition: border-color .15s;" style-hover="border-color: #6E92E8;">Architecture</a>
+            <a href="#debugging" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #F2F4F7; text-decoration: none; font-size: 14px; font-weight: 500; padding: 11px 18px; border-radius: 9px; border: 1px solid #2F353F; transition: border-color .15s;" style-hover="border-color: #6E92E8;">Debugging Stories</a>
+          </div>
+        </div>
+        <div style="flex: 1 1 240px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-content: start;">
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid #262C36; border-radius: 10px; padding: 12px 14px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: #6A7180;">ROLE</div><div style="font-size: 13.5px; font-weight: 600; margin-top: 3px;">Sole engineer</div></div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid #262C36; border-radius: 10px; padding: 12px 14px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: #6A7180;">TEAM SIZE</div><div style="font-size: 13.5px; font-weight: 600; margin-top: 3px;">1</div></div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid #262C36; border-radius: 10px; padding: 12px 14px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: #6A7180;">TIMELINE</div><div style="font-size: 13.5px; font-weight: 600; margin-top: 3px;">2024 — present</div></div>
+          <div style="background: rgba(255,255,255,0.03); border: 1px solid #262C36; border-radius: 10px; padding: 12px 14px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: #6A7180;">DURATION</div><div style="font-size: 13.5px; font-weight: 600; margin-top: 3px;">6 phases</div></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div style="width: min(1120px, 92vw); margin: 0 auto;">
+
+    <!-- METRICS -->
+    <section style="padding: clamp(40px, 5vw, 64px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;">
+        <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="6">
+          <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 12px; padding: 20px 22px; transition: transform .2s, border-color .2s;" style-hover="transform: translateY(-3px); border-color: #37518F;">
+            <div style="font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; letter-spacing: -0.02em;">{{ m.value }}</div>
+            <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.05em; color: #6A7180; text-transform: uppercase; margin-top: 4px;">{{ m.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- EXEC SUMMARY -->
+    <section id="overview" style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">01 / EXECUTIVE SUMMARY</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">The 30-second version.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
+        <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 14px; padding: 26px;">
+          <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 12px;">WHAT WAS THE PROJECT?</div>
+          <p style="font-size: 14.5px; color: #B6BCC6; line-height: 1.7; margin: 0;">A production child-education sponsorship platform (public site, admin console, sponsor portal) that needed to move from a single-dyno deployment to real cloud infrastructure.</p>
+        </div>
+        <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 14px; padding: 26px;">
+          <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 12px;">WHAT PROBLEM DID IT SOLVE?</div>
+          <p style="font-size: 14.5px; color: #B6BCC6; line-height: 1.7; margin: 0;">Financial data with no fault tolerance: one crash meant downtime and risk to donor trust. The platform needed managed data, health-checked containers, and observability.</p>
+        </div>
+        <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 14px; padding: 26px;">
+          <div style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 12px;">WHAT WAS MY ROLE?</div>
+          <p style="font-size: 14.5px; color: #B6BCC6; line-height: 1.7; margin: 0;">Everything — architecture, containerisation, networking, IAM, deployment, and production debugging. Every decision and every 2am fix in this case study is mine.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture" style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">02 / ARCHITECTURE</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">Production architecture.</h2>
+      <div style="background: #101318; border: 1px solid #262C36; border-radius: 16px; overflow: hidden;">
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; background: rgba(255,255,255,0.03); backdrop-filter: blur(12px); border-bottom: 1px solid #1F242C;">
+          <span style="font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #9AA1AD;">production-architecture.v2 · eu-west-1</span>
+        </div>
+        <div style="padding: clamp(24px, 4vw, 44px); display: flex; flex-wrap: wrap; gap: 18px; align-items: stretch;">
+          <div style="flex: 0 1 150px; display: flex; flex-direction: column; justify-content: center; gap: 10px;">
+            <div style="background: #14171C; border: 1px solid #262C36; border-radius: 10px; padding: 12px 14px; text-align: center;">
+              <div style="font-size: 13px; font-weight: 600;">Users</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #6A7180; margin-top: 2px;">Route 53 · HTTPS</div>
+            </div>
+          </div>
+          <div style="flex: 3 1 420px; border: 1px dashed #37518F; border-radius: 14px; padding: 18px; position: relative;">
+            <span style="position: absolute; top: -9px; left: 16px; font-family: 'Geist Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: #6E92E8; background: #101318; padding: 0 8px;">VPC</span>
+            <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+              <div style="flex: 1 1 120px; background: #14171C; border: 1px solid #262C36; border-radius: 10px; padding: 12px 14px; text-align: center;">
+                <div style="font-size: 13px; font-weight: 600;">ALB</div>
+                <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #6A7180; margin-top: 2px;">health checks</div>
+              </div>
+              <svg width="22" height="14" viewBox="0 0 22 14" style="flex: 0 0 auto;"><path d="M1 7h18" stroke="#37518F" stroke-width="1.5" stroke-dasharray="4 3" style="animation: flowDash 1.2s linear infinite;"/><path d="m15 2 5 5-5 5" fill="none" stroke="#37518F" stroke-width="1.5"/></svg>
+              <div style="flex: 1 1 150px; background: #14171C; border: 1px solid #2B57D4; border-radius: 10px; padding: 12px 14px; text-align: center; box-shadow: 0 0 0 3px rgba(43,87,212,0.12);">
+                <div style="font-size: 13px; font-weight: 600;">ECS Service</div>
+                <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #6E92E8; margin-top: 2px;">Fargate · 2 tasks</div>
+              </div>
+              <svg width="22" height="14" viewBox="0 0 22 14" style="flex: 0 0 auto;"><path d="M1 7h18" stroke="#37518F" stroke-width="1.5" stroke-dasharray="4 3" style="animation: flowDash 1.2s linear infinite;"/><path d="m15 2 5 5-5 5" fill="none" stroke="#37518F" stroke-width="1.5"/></svg>
+              <div style="flex: 1 1 120px; background: #14171C; border: 1px solid #262C36; border-radius: 10px; padding: 12px 14px; text-align: center;">
+                <div style="font-size: 13px; font-weight: 600;">RDS</div>
+                <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; color: #6A7180; margin-top: 2px;">PostgreSQL 16</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+              <div style="flex: 1 1 110px; background: rgba(255,255,255,0.02); border: 1px solid #1F242C; border-radius: 8px; padding: 8px 12px; text-align: center; font-family: 'Geist Mono', monospace; font-size: 11px; color: #9AA1AD;">S3</div>
+              <div style="flex: 1 1 110px; background: rgba(255,255,255,0.02); border: 1px solid #1F242C; border-radius: 8px; padding: 8px 12px; text-align: center; font-family: 'Geist Mono', monospace; font-size: 11px; color: #9AA1AD;">Secrets Manager</div>
+              <div style="flex: 1 1 110px; background: rgba(255,255,255,0.02); border: 1px solid #1F242C; border-radius: 8px; padding: 8px 12px; text-align: center; font-family: 'Geist Mono', monospace; font-size: 11px; color: #9AA1AD;">CloudWatch</div>
+              <div style="flex: 1 1 110px; background: rgba(255,255,255,0.02); border: 1px solid #1F242C; border-radius: 8px; padding: 8px 12px; text-align: center; font-family: 'Geist Mono', monospace; font-size: 11px; color: #9AA1AD;">IAM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">03 / TIMELINE</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">Six phases.</h2>
+      <div style="overflow-x: auto; padding-bottom: 8px;">
+        <div style="display: flex; min-width: 720px;">
+          <sc-for list="{{ phases }}" as="ph" hint-placeholder-count="6">
+            <div style="flex: 1; position: relative; padding: 0 14px 0 0;">
+              <div style="display: flex; align-items: center; margin-bottom: 14px;">
+                <span style="width: 14px; height: 14px; border-radius: 50%; background: {{ ph.dot }}; border: 3px solid #1C2128; flex: 0 0 auto;"></span>
+                <span style="height: 2px; flex: 1; background: #1F242C;"></span>
+              </div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: {{ ph.labelColor }};">{{ ph.status }}</div>
+              <div style="font-size: 15px; font-weight: 600; margin-top: 4px;">{{ ph.name }}</div>
+              <div style="font-size: 12.5px; color: #6A7180; margin-top: 4px; line-height: 1.5;">{{ ph.note }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGES -->
+    <section id="challenges" style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">04 / CHALLENGES</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">What went wrong — and how it got fixed.</h2>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 16px; overflow: hidden;">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 20px 26px; border-bottom: 1px solid #1F242C;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px; background: rgba(232,106,94,0.1); color: #E86A5E;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            </span>
+            <div style="flex: 1;">
+              <div style="font-size: 17px; font-weight: 600;">ECS tasks failing health checks after deploy</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #6A7180; margin-top: 2px;">CHALLENGE 01 · DEPLOYMENT PHASE</div>
+            </div>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #36C57E; border: 1px solid #1E3A2C; padding: 4px 10px; border-radius: 100px;">RESOLVED</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: #1F242C;">
+            <div style="background: #14171C; padding: 20px 26px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #E86A5E; margin-bottom: 8px;">PROBLEM</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">New tasks cycled endlessly — started, killed at 60s, restarted. Zero successful deployments.</p></div>
+            <div style="background: #14171C; padding: 20px 26px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #E8B93E; margin-bottom: 8px;">ROOT CAUSE</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Spring Boot cold start exceeded the ALB health-check grace period; the check hit before the app was up.</p></div>
+            <div style="background: #14171C; padding: 20px 26px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 8px;">SOLUTION</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Raised health-check grace period, tuned JVM startup, pointed the check at a lightweight readiness endpoint.</p></div>
+            <div style="background: #14171C; padding: 20px 26px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #36C57E; margin-bottom: 8px;">RESULT &amp; LESSON</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Deploys green since. Lesson: health checks are a contract — design them with the app's startup profile, not defaults.</p></div>
+          </div>
+        </div>
+        <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 16px; overflow: hidden;">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px; padding: 20px 26px; border-bottom: 1px solid #1F242C;">
+            <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 10px; background: rgba(232,185,62,0.1); color: #E8B93E;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <div style="flex: 1;">
+              <div style="font-size: 17px; font-weight: 600;">Task couldn't read database credentials</div>
+              <div style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #6A7180; margin-top: 2px;">CHALLENGE 02 · DEPLOYMENT PHASE</div>
+            </div>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #36C57E; border: 1px solid #1E3A2C; padding: 4px 10px; border-radius: 100px;">RESOLVED</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: #1F242C;">
+            <div style="background: #14171C; padding: 20px 26px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #E86A5E; margin-bottom: 8px;">PROBLEM</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Container booted locally but crashed in ECS with an access-denied error on startup.</p></div>
+            <div style="background: #14171C; padding: 20px 26px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #E8B93E; margin-bottom: 8px;">ROOT CAUSE</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">The task execution role lacked permission to read the Secrets Manager entry — IAM roles for pulling images and running tasks are different.</p></div>
+            <div style="background: #14171C; padding: 20px 26px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 8px;">SOLUTION</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Scoped a least-privilege policy for exactly the two secrets the task needs and attached it to the execution role.</p></div>
+            <div style="background: #14171C; padding: 20px 26px;"><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #36C57E; margin-bottom: 8px;">RESULT &amp; LESSON</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Clean boots, no wildcard permissions. Lesson: IAM errors are documentation errors — read which role does what.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPLOYMENT FLOW -->
+    <section style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">05 / DEPLOYMENT JOURNEY</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">Commit to production.</h2>
+      <div style="background: #101318; border: 1px solid #262C36; border-radius: 16px; padding: clamp(24px, 4vw, 40px); overflow-x: auto;">
+        <div style="display: flex; align-items: center; gap: 10px; min-width: 860px;">
+          <sc-for list="{{ pipeline }}" as="st" hint-placeholder-count="8">
+            <div style="display: flex; align-items: center; gap: 10px; flex: 1;">
+              <div style="flex: 1; background: #14171C; border: 1px solid {{ st.border }}; border-radius: 12px; padding: 14px 10px; text-align: center;">
+                <div style="font-size: 13px; font-weight: 600; color: {{ st.color }};">{{ st.name }}</div>
+                <div style="font-family: 'Geist Mono', monospace; font-size: 10px; color: #6A7180; margin-top: 3px;">{{ st.note }}</div>
+              </div>
+              <sc-if value="{{ st.arrow }}" hint-placeholder-val="{{ true }}">
+                <svg width="20" height="12" viewBox="0 0 20 12" style="flex: 0 0 auto;"><path d="M0 6h15" stroke="#37518F" stroke-width="1.5" stroke-dasharray="4 3" style="animation: flowDash 1.2s linear infinite;"/><path d="m13 1 5 5-5 5" fill="none" stroke="#37518F" stroke-width="1.5"/></svg>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">06 / AWS SERVICES</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">What each service does here.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="10">
+          <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 12px; padding: 20px; transition: border-color .2s;" style-hover="border-color: #37518F;">
+            <div style="font-family: 'Geist Mono', monospace; font-size: 13px; font-weight: 600;">{{ s.name }}</div>
+            <div style="font-size: 12.5px; color: #9AA1AD; line-height: 1.55; margin-top: 6px;">{{ s.role }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- DEBUG STORY -->
+    <section id="debugging" style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">07 / DEBUGGING STORIES</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">Real production debugging — with the terminal to prove it.</h2>
+      <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 16px; overflow: hidden;">
+        <div style="padding: 20px 26px; border-bottom: 1px solid #1F242C; display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <span style="font-family: 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #fff; background: #2B57D4; padding: 4px 9px; border-radius: 5px;">DEBUG 01</span>
+          <div style="font-size: 17px; font-weight: 600; flex: 1;">Container exits with code 137 in production only</div>
+          <span style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #6A7180;">3h to resolution</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap;">
+          <div style="flex: 1 1 300px; padding: 24px 26px; display: flex; flex-direction: column; gap: 16px; border-right: 1px solid #1F242C;">
+            <div><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #E86A5E; margin-bottom: 6px;">SYMPTOMS</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Tasks dying silently ~40min after deploy. No stack trace, no error log — just gone.</p></div>
+            <div><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #E8B93E; margin-bottom: 6px;">INVESTIGATION</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Exit code 137 = SIGKILL. Checked CloudWatch container insights → memory at 512MB ceiling. JVM saw the host's memory, not the container's.</p></div>
+            <div><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 6px;">FIX</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Set container-aware JVM flags (<span style="font-family: 'Geist Mono', monospace; color: #9BB5F0;">MaxRAMPercentage=75</span>), raised task memory to 1GB, added a CloudWatch alarm at 85%.</p></div>
+            <div><div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #36C57E; margin-bottom: 6px;">OUTCOME</div><p style="font-size: 13.5px; color: #B6BCC6; line-height: 1.65; margin: 0;">Zero OOM kills since. Memory alarms now part of the standard task template.</p></div>
+          </div>
+          <div style="flex: 1 1 340px; background: #0B0D10;">
+            <div style="display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-bottom: 1px solid #1F242C;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #E86A5E;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #E8B93E;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #36C57E;"></span>
+              <span style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #6A7180; margin-left: 8px;">commands used</span>
+            </div>
+            <div style="padding: 18px 20px; font-family: 'Geist Mono', monospace; font-size: 12.5px; line-height: 1.9; overflow-x: auto;">
+              <div><span style="color: #36C57E;">$</span> <span style="color: #E8EAED;">aws ecs describe-tasks --cluster prod --tasks abc123</span></div>
+              <div style="color: #6A7180;">  "stopCode": "EssentialContainerExited", "exitCode": 137</div>
+              <div style="margin-top: 8px;"><span style="color: #36C57E;">$</span> <span style="color: #E8EAED;">aws logs tail /ecs/jjt-api --since 1h --follow</span></div>
+              <div style="color: #6A7180;">  [no application error — process killed]</div>
+              <div style="margin-top: 8px;"><span style="color: #36C57E;">$</span> <span style="color: #E8EAED;">docker stats jjt-api-local</span></div>
+              <div style="color: #E8B93E;">  MEM 511.8MiB / 512MiB  99.9%</div>
+              <div style="margin-top: 8px;"><span style="color: #36C57E;">$</span> <span style="color: #E8EAED;">java -XX:MaxRAMPercentage=75 -jar app.jar</span></div>
+              <div style="color: #36C57E;">  ✓ heap sized to container limit</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STACK + LESSONS -->
+    <section style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">08 / STACK &amp; LESSONS</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">Technology &amp; what it taught me.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px;">
+        <sc-for list="{{ tech }}" as="t" hint-placeholder-count="8">
+          <div style="background: #14171C; border: 1px solid #1F242C; border-radius: 12px; padding: 18px 20px;">
+            <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 8px;">{{ t.cat }}</div>
+            <div style="font-size: 13.5px; color: #B6BCC6; line-height: 1.7;">{{ t.items }}</div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px;">
+        <sc-for list="{{ lessons }}" as="l" hint-placeholder-count="5">
+          <div style="background: rgba(43,87,212,0.05); border: 1px solid #37518F; border-radius: 12px; padding: 18px 20px;">
+            <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 8px;">{{ l.cat }}</div>
+            <div style="font-size: 13.5px; color: #D7DCE4; line-height: 1.65;">{{ l.text }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section id="roadmap" style="padding: clamp(48px, 6vw, 80px) 0; border-bottom: 1px solid #1F242C;">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">09 / ROADMAP</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">Where this goes next.</h2>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <sc-for list="{{ roadmap }}" as="r" hint-placeholder-count="7">
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; background: #14171C; border: 1px solid #1F242C; border-radius: 12px; padding: 16px 20px;">
+            <span style="font-family: 'Geist Mono', monospace; font-size: 11px; color: #6A7180; flex: 0 0 64px;">{{ r.phase }}</span>
+            <div style="flex: 1 1 160px;">
+              <div style="font-size: 14.5px; font-weight: 600;">{{ r.name }}</div>
+              <div style="font-size: 12px; color: #6A7180; margin-top: 2px;">{{ r.note }}</div>
+            </div>
+            <div style="flex: 2 1 200px; height: 6px; background: #1C2128; border-radius: 100px; overflow: hidden;">
+              <div style="height: 100%; width: {{ r.pct }}; background: {{ r.barColor }}; border-radius: 100px;"></div>
+            </div>
+            <span style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: {{ r.statusColor }}; flex: 0 0 auto;">{{ r.status }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- RELATED + CTA -->
+    <section style="padding: clamp(48px, 6vw, 80px) 0 clamp(64px, 8vw, 96px);">
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 10px;">10 / MORE WORK</div>
+      <h2 style="font-size: clamp(22px, 2.8vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin: 0 0 28px;">Related projects.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px;">
+        <a href="Portfolio V3.dc.html#flagship" style="background: #14171C; border: 1px solid #1F242C; border-radius: 12px; padding: 20px; text-decoration: none; transition: transform .2s, border-color .2s;" style-hover="transform: translateY(-3px); border-color: #37518F;">
+          <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 8px;">SAAS · FINTECH</div>
+          <div style="font-size: 16px; font-weight: 600; color: #F2F4F7;">JJT Platform</div>
+          <div style="font-size: 12.5px; color: #6A7180; margin-top: 4px; line-height: 1.55;">The product itself — sponsorship platform, solo build</div>
+        </a>
+        <a href="Portfolio V3.dc.html#cases" style="background: #14171C; border: 1px solid #1F242C; border-radius: 12px; padding: 20px; text-decoration: none; transition: transform .2s, border-color .2s;" style-hover="transform: translateY(-3px); border-color: #37518F;">
+          <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 8px;">GOVERNMENT</div>
+          <div style="font-size: 16px; font-weight: 600; color: #F2F4F7;">TAMM</div>
+          <div style="font-size: 12.5px; color: #6A7180; margin-top: 4px; line-height: 1.55;">Frontend architecture at government scale</div>
+        </a>
+        <a href="Portfolio V3.dc.html#cases" style="background: #14171C; border: 1px solid #1F242C; border-radius: 12px; padding: 20px; text-decoration: none; transition: transform .2s, border-color .2s;" style-hover="transform: translateY(-3px); border-color: #37518F;">
+          <div style="font-family: 'Geist Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #6E92E8; margin-bottom: 8px;">ENERGY</div>
+          <div style="font-size: 16px; font-weight: 600; color: #F2F4F7;">Halliburton Digital Well</div>
+          <div style="font-size: 12.5px; color: #6A7180; margin-top: 4px; line-height: 1.55;">Real-time well monitoring over unstable networks</div>
+        </a>
+      </div>
+      <div style="background: linear-gradient(135deg, rgba(43,87,212,0.16), rgba(20,23,28,0)); border: 1px solid #37518F; border-radius: 16px; padding: clamp(28px, 4vw, 44px); text-align: center;">
+        <div style="font-size: clamp(22px, 3vw, 32px); font-weight: 700; letter-spacing: -0.025em;">Want this level of ownership on your team?</div>
+        <p style="font-size: 15px; color: #9AA1AD; margin: 10px auto 24px; max-width: 32em;">I'm open to senior engineering and architecture roles.</p>
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <a href="mailto:naveed4034@gmail.com" style="display: inline-flex; align-items: center; gap: 8px; background: #2B57D4; color: #fff; text-decoration: none; font-size: 14.5px; font-weight: 500; padding: 12px 22px; border-radius: 9px; transition: background .15s;" style-hover="background: #1E44B0;">Get in touch</a>
+          <a href="Resume.dc.html" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #F2F4F7; text-decoration: none; font-size: 14.5px; font-weight: 500; padding: 12px 22px; border-radius: 9px; border: 1px solid #2F353F; transition: border-color .15s;" style-hover="border-color: #6E92E8;">Download resume</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer style="border-top: 1px solid #1F242C;">
+    <div style="width: min(1120px, 92vw); margin: 0 auto; padding: 32px 0; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: #2B57D4; color: #fff; border-radius: 7px; font-family: 'Geist Mono', monospace; font-weight: 600; font-size: 13px;">MN</span>
+        <span style="font-size: 14px; color: #F2F4F7;">Muhammad Naveed</span>
+      </div>
+      <div style="font-family: 'Geist Mono', monospace; font-size: 12.5px; color: #6A7180;">© 2026 · Case study · AWS production deployment</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      metrics: [
+        { value: '40+', label: 'APIs' },
+        { value: '99.9%', label: 'Uptime' },
+        { value: '6', label: 'Deploy phases' },
+        { value: '12', label: 'Prod issues solved' },
+        { value: 'ECS', label: 'AWS compute' },
+        { value: '2', label: 'Fargate tasks' },
+      ],
+      phases: [
+        { name: 'Planning', note: 'Scope, architecture options, cost model', status: 'COMPLETED', dot: '#2B57D4', labelColor: '#6E92E8' },
+        { name: 'Development', note: 'Containerisation, config, secrets', status: 'COMPLETED', dot: '#2B57D4', labelColor: '#6E92E8' },
+        { name: 'Testing', note: 'Load, failover, restore drills', status: 'COMPLETED', dot: '#2B57D4', labelColor: '#6E92E8' },
+        { name: 'Deployment', note: 'ECS rollout, DNS cutover', status: 'COMPLETED', dot: '#2B57D4', labelColor: '#6E92E8' },
+        { name: 'Production', note: 'Monitoring, alarms, on-call', status: 'CURRENT', dot: '#36C57E', labelColor: '#36C57E' },
+        { name: 'Enhancement', note: 'CI/CD, autoscaling', status: 'PLANNED', dot: '#262C36', labelColor: '#6A7180' },
+      ],
+      pipeline: [
+        { name: 'Developer', note: 'git push', color: '#F2F4F7', border: '#262C36', arrow: true },
+        { name: 'GitHub', note: 'main branch', color: '#F2F4F7', border: '#262C36', arrow: true },
+        { name: 'Docker', note: 'multi-stage build', color: '#F2F4F7', border: '#262C36', arrow: true },
+        { name: 'ECR', note: 'image registry', color: '#F2F4F7', border: '#262C36', arrow: true },
+        { name: 'ECS', note: 'rolling deploy', color: '#F2F4F7', border: '#262C36', arrow: true },
+        { name: 'ALB', note: 'health checks', color: '#F2F4F7', border: '#262C36', arrow: true },
+        { name: 'CloudWatch', note: 'logs + alarms', color: '#F2F4F7', border: '#262C36', arrow: true },
+        { name: 'Production', note: 'live traffic', color: '#36C57E', border: '#1E3A2C', arrow: false },
+      ],
+      services: [
+        { name: 'ECS', role: 'Runs the API as health-checked Fargate tasks' },
+        { name: 'ALB', role: 'Routes traffic, terminates TLS, gates deploys' },
+        { name: 'ECR', role: 'Versioned container images per release' },
+        { name: 'RDS', role: 'Managed PostgreSQL, automated backups' },
+        { name: 'CloudWatch', role: 'Logs, container insights, memory alarms' },
+        { name: 'IAM', role: 'Least-privilege task and deploy roles' },
+        { name: 'Route 53', role: 'DNS and health-based routing' },
+        { name: 'S3', role: 'Document storage and receipts' },
+        { name: 'Secrets Manager', role: 'DB credentials and API keys, rotated' },
+        { name: 'VPC', role: 'Private subnets for data, public for ALB' },
+      ],
+      tech: [
+        { cat: 'FRONTEND', items: 'Angular 19, TypeScript, RxJS' },
+        { cat: 'BACKEND', items: 'Java 17, Spring Boot 3.2' },
+        { cat: 'DATABASE', items: 'PostgreSQL 16, Flyway' },
+        { cat: 'CLOUD', items: 'AWS ECS, RDS, S3, Route 53' },
+        { cat: 'DEVOPS', items: 'Docker, GitHub Actions, ECR' },
+        { cat: 'TESTING', items: 'JUnit, Testcontainers' },
+        { cat: 'SECURITY', items: 'JWT, IAM, Secrets Manager' },
+        { cat: 'AI', items: 'Copilot + Claude in the loop' },
+      ],
+      lessons: [
+        { cat: 'TECHNICAL', text: 'The JVM must be told it lives in a container — defaults assume the host.' },
+        { cat: 'ARCHITECTURE', text: 'Health checks are a contract; design them with the startup profile.' },
+        { cat: 'DEPLOYMENT', text: 'Every manual step is a future outage. Script the cutover.' },
+        { cat: 'LEADERSHIP', text: 'Owning production changes how you write code upstream.' },
+        { cat: 'COMMUNICATION', text: 'A written incident note beats a perfect memory.' },
+      ],
+      roadmap: [
+        { phase: 'PHASE 1', name: 'AWS Migration', note: 'ECS, RDS, ALB, monitoring', pct: '100%', status: 'COMPLETED', barColor: '#2B57D4', statusColor: '#6E92E8' },
+        { phase: 'PHASE 2', name: 'CI/CD Pipeline', note: 'GitHub Actions → ECR → ECS', pct: '60%', status: 'IN PROGRESS', barColor: '#36C57E', statusColor: '#36C57E' },
+        { phase: 'PHASE 3', name: 'Monitoring Depth', note: 'Dashboards, SLOs, tracing', pct: '0%', status: 'PLANNED', barColor: '#262C36', statusColor: '#6A7180' },
+        { phase: 'PHASE 4', name: 'Auto Scaling', note: 'Target tracking on CPU + memory', pct: '0%', status: 'PLANNED', barColor: '#262C36', statusColor: '#6A7180' },
+        { phase: 'PHASE 5', name: 'Microservices', note: 'Split ledger + notifications', pct: '0%', status: 'PLANNED', barColor: '#262C36', statusColor: '#6A7180' },
+        { phase: 'PHASE 6', name: 'Agentic AI', note: 'Ops copilot on platform data', pct: '0%', status: 'PLANNED', barColor: '#262C36', statusColor: '#6A7180' },
+        { phase: 'PHASE 7', name: 'ERP', note: 'Broader org management suite', pct: '0%', status: 'PLANNED', barColor: '#262C36', statusColor: '#6A7180' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
