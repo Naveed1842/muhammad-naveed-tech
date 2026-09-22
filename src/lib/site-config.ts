@@ -1,11 +1,11 @@
 export const siteConfig = {
   name: "Muhammad Naveed",
   initials: "MN",
-  title: "Muhammad Naveed — Software Architect & Senior Full-Stack Engineer",
+  title: "Muhammad Naveed — Senior Full-Stack Engineer & Technical Lead",
   description:
-    "I lead frontend architecture for TAMM, a national government services platform, and independently run a production SaaS. Ten years across government, oilfield, healthcare, and payments.",
+    "I lead frontend architecture for TAMM, a national government services platform, and independently built and run SponsorOne, a production platform for education NGOs. Ten years across government, oilfield and healthcare systems.",
   url: "https://mnaveed.tech",
-  role: "Software Architect · Senior Full-Stack Engineer",
+  role: "Senior Full-Stack Engineer · Technical Lead",
   location: "Riyadh, Saudi Arabia",
   locationNote: "Transferable Iqama",
   relocation: "Open to relocation",
