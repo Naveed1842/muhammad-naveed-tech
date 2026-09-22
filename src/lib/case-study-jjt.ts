@@ -1,11 +1,11 @@
 export const jjtCaseStudy = {
-  title: "JJT — Child Education Sponsorship Platform",
+  title: "SponsorOne — Child Education Sponsorship Platform for JJT",
   description:
     "How a solo-built, append-only ledger architecture replaced spreadsheets and paper receipts for an education sponsorship NGO — and how it got deployed to AWS.",
   liveUrl: "https://sponsorone.app",
   liveLabel: "sponsorone.app",
   period: "2024 — Present",
-  role: "Product Architect · Full Stack Engineer · Sole Builder",
+  role: "Full-Stack Engineer · Sole Builder — requirements to production",
 
   problem: {
     eyebrow: "THE PROBLEM",
@@ -100,8 +100,9 @@ export const jjtCaseStudy = {
 
   deployment: {
     eyebrow: "DEPLOYMENT",
-    title: "Docker, ECS/Fargate, and a CI/CD path built for one engineer.",
-    body: "The production deployment was planned and executed end to end — containerizing the Spring Boot and Angular services with Docker, running them on ECS/Fargate so there's no server fleet to patch, and building a CI/CD pipeline that runs the Testcontainers-backed integration suite before anything reaches production. Flyway owns every schema change, so migrations are versioned, ordered, and reviewable rather than run ad hoc against a live database.",
+    title: "Built on AWS, moved to Heroku when the bill stopped making sense.",
+    body: "The first production deployment was planned and executed end to end on AWS — Spring Boot and Angular containerized with Docker, running on ECS/Fargate so there was no server fleet to patch, with a CI/CD pipeline running the Testcontainers-backed integration suite before anything reached production. Flyway owns every schema change, so migrations are versioned, ordered and reviewable rather than run ad hoc against a live database.",
+    body2: "It now runs on Heroku. The AWS setup was the better platform and the wrong economics for a system funded by an NGO — the monthly bill was buying resilience the current load didn't need. Because the domain layer is framework-free and the services were already containerized, moving hosts was a deployment change rather than a rewrite, which is the entire argument for keeping those boundaries clean. I'd make the same call again; I'd just run the cost numbers before picking the more interesting infrastructure rather than after.",
   },
 
   roadmap: {

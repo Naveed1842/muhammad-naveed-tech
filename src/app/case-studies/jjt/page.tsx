@@ -180,8 +180,13 @@ export default function JjtCaseStudyPage() {
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="m-0 mb-8 max-w-[48em] text-[15px] leading-[1.75] text-[var(--band-body)]">
+              <p className="m-0 mb-5 max-w-[48em] text-[15px] leading-[1.75] text-[var(--band-body)]">
                 {jjtCaseStudy.deployment.body}
+              </p>
+            </Reveal>
+            <Reveal delay={0.12}>
+              <p className="m-0 mb-8 max-w-[48em] text-[15px] leading-[1.75] text-[var(--band-body)]">
+                {jjtCaseStudy.deployment.body2}
               </p>
             </Reveal>
             <Reveal delay={0.15}>

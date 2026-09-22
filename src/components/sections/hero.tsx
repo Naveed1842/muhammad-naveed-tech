@@ -13,17 +13,18 @@ export function Hero() {
         <div className="flex-1 basis-[460px]">
           <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-[var(--band-border)] px-3 py-1.5 font-mono text-[12.5px] tracking-wide text-[var(--band-muted)]">
             <span className="animate-pulse-dot size-[7px] rounded-full bg-success" />
-            SOFTWARE ARCHITECT · SENIOR FULL-STACK ENGINEER · RIYADH
+            SENIOR FULL-STACK ENGINEER · TECHNICAL LEAD · RIYADH
           </div>
           <h1 className="mb-6 max-w-[15em] text-[clamp(32px,4.8vw,52px)] leading-[1.12] font-bold tracking-[-0.03em] text-white">
             I lead frontend architecture for TAMM, Saudi Arabia&apos;s national government
             services platform.
           </h1>
           <p className="mb-9 max-w-[34em] text-[clamp(16px,1.9vw,19px)] leading-[1.65] text-[var(--band-body)]">
-            [N] product teams build on the component library and standards I own. On the side, I
-            designed, built, deployed, and now run a production SaaS by myself. Ten years across
-            government, oilfield, healthcare, and payments — Java/Spring Boot · Angular ·
-            PostgreSQL · AWS.
+            Multiple product teams build on the component library and standards I own. I also write
+            the Spring Boot services behind those journeys, the pipelines that ship them, and the
+            LLM features on top — then own what happens in production. On the side I designed,
+            built and still run a production platform by myself. Ten years across government,
+            oilfield and healthcare systems.
           </p>
           <div className="mb-[38px] flex flex-wrap gap-3">
             <a

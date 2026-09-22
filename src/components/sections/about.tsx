@@ -5,7 +5,7 @@ export function About() {
   return (
     <section id="about" className="mx-auto w-[92vw] max-w-[1120px] py-[clamp(72px,9vw,120px)]">
       <Reveal>
-        <SectionEyebrow>04 / ABOUT</SectionEyebrow>
+        <SectionEyebrow>01 / ABOUT</SectionEyebrow>
       </Reveal>
       <div className="flex flex-wrap gap-[clamp(32px,6vw,72px)]">
         <Reveal className="flex-1 basis-[300px]">
@@ -16,8 +16,8 @@ export function About() {
         <Reveal delay={0.1} className="flex-1 basis-[360px] text-[clamp(15px,1.6vw,17px)] leading-[1.75] text-body">
           <p className="m-0 mb-[18px]">
             I&apos;ve spent ten years on systems where mistakes are expensive: government services,
-            oilfield operations, healthcare devices, and money movement. Most of that work has been
-            the unglamorous kind — a component library that [N] engineers have to live with, a
+            oilfield operations, healthcare records, and money movement. Most of that work has been
+            the unglamorous kind — a component library that other teams have to live with, a
             WebSocket stream that has to survive a drilling site&apos;s connectivity, a ledger that
             can&apos;t be edited after the fact.
           </p>
