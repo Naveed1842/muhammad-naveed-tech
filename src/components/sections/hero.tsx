@@ -20,10 +20,11 @@ export function Hero() {
             services platform.
           </h1>
           <p className="mb-9 max-w-[34em] text-[clamp(16px,1.9vw,19px)] leading-[1.65] text-[var(--band-body)]">
-            Multiple product teams build on the component library and standards I own. On the
-            side, I designed, built, deployed, and now run a production SaaS by myself. Ten years
-            across government, oilfield and healthcare systems — Java/Spring Boot · Angular ·
-            PostgreSQL · AWS.
+            Multiple product teams build on the component library and standards I own. I also write
+            the Spring Boot services behind those journeys, the pipelines that ship them, and the
+            LLM features on top — then own what happens in production. On the side I designed,
+            built and still run a production platform by myself. Ten years across government,
+            oilfield and healthcare systems.
           </p>
           <div className="mb-[38px] flex flex-wrap gap-3">
             <a

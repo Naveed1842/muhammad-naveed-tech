@@ -7,7 +7,7 @@ export const companies = [
 ] as const;
 
 export const tamm = {
-  eyebrow: "02 / SELECTED WORK — TAMM",
+  eyebrow: "03 / SELECTED WORK — TAMM",
   name: "TAMM — national government services platform",
   org: "Elm Company · Riyadh",
   period: "2021 — Present",
@@ -39,7 +39,7 @@ export const tamm = {
 } as const;
 
 export const sponsorOne = {
-  eyebrow: "03 / SELECTED WORK — SPONSORONE",
+  eyebrow: "04 / SELECTED WORK — SPONSORONE",
   name: "SponsorOne — sponsorship and donation platform for education NGOs",
   url: "https://sponsorone.app",
   urlLabel: "sponsorone.app",
@@ -59,7 +59,7 @@ export const sponsorOne = {
   ],
   differentlyLabel: "What I'd do differently",
   differently:
-    "I shipped onto Heroku to get it live quickly, which was the right call at the time and is a cost I'm paying now — the move to a container platform on Terraform-provisioned infrastructure is work I could have avoided by containerising from the first deploy.",
+    "I built and ran it on AWS ECS/Fargate first, then moved it to Heroku when the monthly bill stopped making sense for a platform funded by an NGO. I'd make the same call again — but I'd run the cost numbers before picking the more interesting infrastructure, not after.",
   stack: [
     "Java 17",
     "Spring Boot 3.2",
@@ -68,6 +68,7 @@ export const sponsorOne = {
     "Flyway",
     "Docker",
     "Testcontainers",
+    "AWS ECS/Fargate",
     "Heroku",
   ],
   caseStudyLabel: "Read the full case study",
@@ -84,6 +85,11 @@ export const principles = [
     tag: "DATA",
     title: "Enforce critical rules twice",
     body: "An append-only ledger lives in the domain model and again as a database constraint. A future developer under deadline pressure will find the one path you didn't guard.",
+  },
+  {
+    tag: "MODELS",
+    title: "An LLM is a dependency, not a feature",
+    body: "A model call is an unreliable network call that sometimes returns confident nonsense. It gets what any other dependency gets: a timeout, a fallback, a structured output contract, and a log of what actually came back.",
   },
   {
     tag: "TESTING",
@@ -156,15 +162,19 @@ export const stackTiers = [
   },
   {
     label: "Ship with regularly",
-    list: "Docker · Kubernetes · AWS · OpenShift · GitHub Actions · GitLab CI · Datadog · MongoDB · Redis · Flyway · Testcontainers · Jest/Cypress/Playwright · REST/GraphQL/WebSockets",
+    list: "Docker · Kubernetes · AWS (ECS/Fargate, ECR, ALB, CloudWatch) · OpenShift · GitHub Actions · GitLab CI · Datadog · MongoDB · Redis · Flyway · Testcontainers · Jest/Cypress/Playwright · REST/GraphQL/WebSockets",
+  },
+  {
+    label: "Applied AI, hands-on",
+    list: "Python · OpenAI and Claude APIs · streaming responses · prompt-based workflows · LLM service integration · automation",
   },
   {
     label: "Used on my own projects, not yet at work scale",
     list: "Terraform · Helm · ArgoCD/GitOps · GKE/Cloud Run · Prometheus/Grafana/OpenTelemetry",
   },
   {
-    label: "Used, wouldn't claim depth",
-    list: "React · Next.js · Svelte · Go · Python (tooling and LLM services, not production systems)",
+    label: "Working knowledge, wouldn't claim depth",
+    list: "RAG · embeddings · vector search · agentic workflows · LLM evaluation · React · Next.js · Svelte · Go",
   },
 ] as const;
 
@@ -172,4 +182,61 @@ export const education = {
   degree: "BSc, Computer Science",
   school: "University Institute of Information Technology (PMAS-AAUR), Rawalpindi",
   period: "2012 — 2016",
+} as const;
+
+export const delivery = {
+  eyebrow: "02 / HOW I DELIVER",
+  title: "Requirements to production, without a handoff.",
+  intro:
+    "Most of my work has been in places where the person who scopes it, designs it, builds it and gets called when it breaks is the same person. These are the five stages I actually own — not a process diagram, just where my hands have been.",
+  steps: [
+    {
+      label: "REQUIREMENTS",
+      body: "Scoping directly with the people who use the thing — government service owners at Elm, drilling domain experts at LMKR, clinic and operations staff on site at RISETech. I'd rather argue about scope early than discover it in UAT.",
+    },
+    {
+      label: "ARCHITECTURE",
+      body: "Domain model, service boundaries, API contracts and the access model, decided before the framework. On SponsorOne that meant a BRD and architecture diagrams before a line of code was written.",
+    },
+    {
+      label: "BUILD",
+      body: "Angular and TypeScript at the front, Java/Spring Boot and Node.js behind it, PostgreSQL underneath — plus the shared component library and standards when more than one team is shipping into the same product.",
+    },
+    {
+      label: "CLOUD & CI/CD",
+      body: "Docker, AWS ECS/Fargate, Kubernetes and OpenShift, with pipelines on GitHub Actions and GitLab CI. Rebuilding CI/CD across TAMM's product teams cut deployment time by roughly 30%.",
+    },
+    {
+      label: "PRODUCTION",
+      body: "Datadog and CloudWatch, structured logging, incident investigation through to root cause, versioned releases with a rollback path. The stage where you find out whether the earlier decisions were any good.",
+    },
+  ],
+} as const;
+
+export const appliedAi = {
+  eyebrow: "05 / APPLIED AI",
+  title: "LLM features, built like everything else.",
+  intro:
+    "The interesting part of building with models isn't the prompt. It's everything around it — streaming, failure handling, cost, and what your system does when the model returns something unusable.",
+  items: [
+    {
+      title: "LLM integration with streaming",
+      body: "OpenAI and Claude APIs behind Python services, streaming responses so the interface shows progress instead of a spinner, and defined behaviour when a call is slow, truncated, or fails outright.",
+    },
+    {
+      title: "Prompt-based workflows in product",
+      body: "Prompts designed and orchestrated as part of a real feature — versioned and reviewed like code, not pasted into a notebook and forgotten.",
+    },
+    {
+      title: "Automation around models",
+      body: "Python services and pipelines that handle the unglamorous parts: input shaping, retries, structured output contracts, and logs you can actually debug from at 2am.",
+    },
+    {
+      title: "AI-assisted engineering",
+      body: "I use AI tooling inside my own build and review loop, under the same rule I apply to any generated code: it doesn't merge until I can explain why it's correct.",
+    },
+  ],
+  honestLabel: "Where I'd stop short",
+  honest:
+    "RAG, embeddings, vector search, agentic workflows and LLM evaluation — I've built with all of them and I wouldn't yet claim them at production scale. I'd rather say that here than discover it with you in week three.",
 } as const;

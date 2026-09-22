@@ -5,7 +5,7 @@ export function About() {
   return (
     <section id="about" className="mx-auto w-[92vw] max-w-[1120px] py-[clamp(72px,9vw,120px)]">
       <Reveal>
-        <SectionEyebrow>04 / ABOUT</SectionEyebrow>
+        <SectionEyebrow>01 / ABOUT</SectionEyebrow>
       </Reveal>
       <div className="flex flex-wrap gap-[clamp(32px,6vw,72px)]">
         <Reveal className="flex-1 basis-[300px]">
