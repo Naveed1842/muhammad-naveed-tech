@@ -21,7 +21,7 @@ export function Contact() {
   return (
     <section id="contact" className="mx-auto w-[92vw] max-w-[1120px] py-[clamp(80px,10vw,130px)] text-center">
       <Reveal>
-        <SectionEyebrow className="justify-center">09 / CONTACT</SectionEyebrow>
+        <SectionEyebrow className="justify-center">10 / CONTACT</SectionEyebrow>
       </Reveal>
       <Reveal delay={0.05}>
         <h2 className="mx-auto m-0 mb-5 max-w-[15em] text-[clamp(32px,5vw,56px)] leading-[1.05] font-bold tracking-[-0.03em]">
